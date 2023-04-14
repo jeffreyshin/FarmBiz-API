@@ -7,7 +7,7 @@ import json
 import datetime as dt
 
 # server URL
-serviceKey = "53bcfc152294461dbe757b8a7b185c46"
+serviceKey = "API KEY"
 
 # data logging date and time
 
