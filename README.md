@@ -1,2 +1,7 @@
 # FarmBiz-API
 Useful API in agricultural sector
+
+* (2023.4.3) VWorld 지도(PNU코드) 검색 OpenAPI, 토양검정자료조회 OpenAPI 추가
+* (2023.4.7) 농업용저수지 저수율 OpenAPI 추가
+* (2023.4.11) 스마트팜 혁신밸리 데이터 OpenAPI 추가
+* (2023.4.15) 토양수분관측 데이터(농업기상관측) OpenAPI 추가
