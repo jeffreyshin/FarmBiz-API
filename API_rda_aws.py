@@ -17,7 +17,7 @@ import xmltodict
 api_url = "http://apis.data.go.kr/1390802/AgriWeather/WeatherObsrInfo/InsttWeather/getWeatherTimeList"
 
 # read api key
-api_key = "Mhl9mL16kvqOfLoUJxorRFlPrkeLeO/oTgVPBEjFs4pj73UcWtPnsTpOikSTt1Xu9tSM7+yzbcMh4WyL7TGypA=="
+api_key = "API_KEY"
 
 paramDict = {
     'serviceKey': api_key,
