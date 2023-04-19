@@ -4,6 +4,7 @@ import requests
 import json
 import datetime as dt
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #################################################
 
@@ -18,7 +19,7 @@ def get_data(dt_now, DELTA):
     soiltemp = [0] * DELTA
     quantum = [0] * DELTA
 
-    dt_run = dt_now - dt.timedelta(hours=DELTA-1)
+    dt_run = dt_now - dt.timedelta(hours=DELTA)
     for i in range(0, DELTA):
         date = dt.datetime.strftime(dt_run, "%Y%m%d")
         time = dt.datetime.strftime(dt_run, "%H")
@@ -33,7 +34,7 @@ def get_data(dt_now, DELTA):
         json_obj = json.loads(response.text)
 
         custom_dt[i] = json_obj['datas'][0]['custom_dt']
-        datetime[i] = json_obj['datas'][0]['datetime']
+        datetime[i] = f"{date} {time}00"
         humidity[i] = json_obj['datas'][0]['humidity']
         temperature[i] = json_obj['datas'][0]['temperature']
         leafwet[i] = json_obj['datas'][0]['leafwet']
@@ -46,26 +47,58 @@ def get_data(dt_now, DELTA):
     usem['temperature'] = temperature
     usem['humidity'] = humidity
     usem['leafwet'] = leafwet
-    usem['soiltemp'] = soiltemp
-    usem['co2'] = co2
-    usem['quantum'] = quantum
+#    usem['soiltemp'] = soiltemp
+#    usem['co2'] = co2
+#    usem['quantum'] = quantum
 
     return(usem)
 
 ########################################################
-DELTA = 2 * 24
+DELTA = 3*24
 
 # server URL
 api_url_r = "http://iot.rda.go.kr/api"
 # api key : read access
-api_key_r = "API KEY"
+api_key_r = "api key"
 
 dt_now = dt.datetime.now()
 usem = get_data(dt_now, DELTA)
 
 df_usem = pd.DataFrame(usem)
-#print(df_usem.sort_values("datetime", ascending = True))
-print(df_usem)
 
-with open('usem.txt', 'w') as file_data:
-   file_data.write(str(df_usem.sort_values("datetime", ascending = True)))
+df_usem = df_usem.sort_values("datetime", ascending = True)
+#print(df_usem)
+
+df_usem.to_csv("./usem.csv", index = False)
+
+# server URL
+api_url_anthracnose = 'http://147.46.206.95:7897/Anthracnose'
+api_url_botrytis = 'http://147.46.206.95:7898/Botrytis'
+
+#headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'multipart/form-data; charset=utf-8'}
+file = {'file': open('input1.csv', 'rb')}
+
+response = requests.post(api_url_anthracnose, files=file)
+
+r = response.json()
+output = json.loads(r['output'])
+
+x = list()
+PINF = list()
+LW = list()
+WT = list()
+
+for i in range(0, 50):
+    PINF.append(output[f'{i}']['PINF'])
+    LW.append(output[f'{i}']['LW'])
+    WT.append(output[f'{i}']['WT'])
+
+x = range(len(PINF))
+
+plt.scatter(x, PINF)
+plt.scatter(x, LW)
+plt.plot(x, WT)
+plt.title("Scatter Plot of the data")
+plt.xlabel("X")
+plt.ylabel("PINF")
+plt.show()
