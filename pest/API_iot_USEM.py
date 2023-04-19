@@ -5,26 +5,20 @@ import json
 import datetime as dt
 import pandas as pd
 
-DELTA = 2 * 24
-
-custom_dt = ["x" for i in range(DELTA)]
-datetime = ["x" for i in range(DELTA)]
-humidity = [0 for i in range(DELTA)]
-temperature = [0 for i in range(DELTA)]
-leafwet = [0 for i in range(DELTA)]
-co2 = [0 for i in range(DELTA)]
-soiltemp = [0 for i in range(DELTA)]
-quantum = [0 for i in range(DELTA)]
-
-# server URL
-api_url_r = "http://iot.rda.go.kr/api"
-# api key : read access
-api_key_r = "API_KEY"
-
 #################################################
 
 def get_data(dt_now, DELTA):
-    dt_run = dt_now - dt.timedelta(hours=DELTA)
+
+    custom_dt = ["0"] * DELTA
+    datetime = ["0"] * DELTA
+    humidity = [0] * DELTA
+    temperature = [0] * DELTA
+    leafwet = [0] * DELTA
+    co2 = [0] * DELTA
+    soiltemp = [0] * DELTA
+    quantum = [0] * DELTA
+
+    dt_run = dt_now - dt.timedelta(hours=DELTA-1)
     for i in range(0, DELTA):
         date = dt.datetime.strftime(dt_run, "%Y%m%d")
         time = dt.datetime.strftime(dt_run, "%H")
@@ -55,11 +49,16 @@ def get_data(dt_now, DELTA):
     usem['soiltemp'] = soiltemp
     usem['co2'] = co2
     usem['quantum'] = quantum
-    print(temperature)
 
     return(usem)
 
 ########################################################
+DELTA = 2 * 24
+
+# server URL
+api_url_r = "http://iot.rda.go.kr/api"
+# api key : read access
+api_key_r = "API KEY"
 
 dt_now = dt.datetime.now()
 usem = get_data(dt_now, DELTA)
