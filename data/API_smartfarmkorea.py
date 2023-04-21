@@ -1,9 +1,7 @@
 # pip install requests
 import pandas as pd
 import requests
-
 import json
-
 import datetime as dt
 
 # server URL
@@ -25,21 +23,35 @@ response = requests.get(api_uri, verify=False)
 json_obj = json.loads(response.text)
 
 # response body
-#print(json_obj)
+#print(len(json_obj))
 
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getCroppingSeasonDataList"
 
-for i in range(0, 1):
-    userid = json_obj[i]['userId']
-    fcltyId =json_obj[i]['fcltyId']
+userId = [0]*100
+fcltyId = [0]*100
 
-api_uri = f"{api_url}/{serviceKey}/{fcltyId}/{userid}"
+for i in range(0, len(json_obj)):
+    userId[i] = json_obj[i]['userId']
+    fcltyId[i] =json_obj[i]['fcltyId']
+
+userId_m = "GJ_0000026"
+fcltyId_m = "C010902_02_04"
+
+print(userId_m)   #김기형 농가
+print(fcltyId_m)
+
+print(userId[23])   #김기형 농가
+print(fcltyId[23])
+
+api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{userId_m}"
 response = requests.get(api_uri, verify=False)
-#print(response.text)
+print(response.text)
 
-measDate = "20230414"
+
+measDate = "20230420"
+
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getEnvDataList"
-api_uri = f"{api_url}/{serviceKey}/{fcltyId}/{measDate}"
+api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{measDate}"
 response = requests.get(api_uri, verify=False)
 
 #print(response.text)
@@ -47,6 +59,7 @@ response = requests.get(api_uri, verify=False)
 json_obj = json.loads(response.text)
 
 dt_now = dt.datetime.strptime(json_obj[0]['measDate'], "%Y-%m-%d %H:%M:%S")
+
 
 TI = list()
 for i in range(0, len(json_obj)) :
