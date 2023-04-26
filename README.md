@@ -5,3 +5,5 @@ Useful API in agricultural sector
 * (2023.4.7) 농업용저수지 저수율 OpenAPI 추가
 * (2023.4.11) 스마트팜 혁신밸리 데이터 OpenAPI 추가
 * (2023.4.15) 토양수분관측 데이터(농업기상관측) OpenAPI 추가
+* (2023.4.25) 식품영양성분, 음식정보 조회 OpenAPI 예제 수정중...
+
