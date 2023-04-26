@@ -30,12 +30,10 @@ paramDict = {
     'serviceKey': api_key,
     'service_Type': 'xml',
     'Page_No': 1,
-    'Page_Size': 1,
-    'food_Name': '무',
-    'ckry_Name': '국'
+    'Page_Size': 20,
+    'food_Name': '죽',
+    'ckry_Name': '조리법'
 }
-
-print(api_uri)
 
 # request url
 headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'application/json; charset=utf-8'}
@@ -50,26 +48,28 @@ print(json_obj)
 
 # response body
 if dict_obj['response']['header']['result_Code'] == "200":
-    print("\nfd_Code: " + dict_obj['response']['body']['items']['item']['fd_Code'])
-    print("upper_Fd_Grupp_Nm: " + dict_obj['response']['body']['items']['item']['upper_Fd_Grupp_Nm'])
-    print("fd_Nm: " + dict_obj['response']['body']['items']['item']['fd_Nm'])
-    print("fd_Wgh: " + dict_obj['response']['body']['items']['item']['fd_Wgh'])
-    print("ckry_Nm: " + dict_obj['response']['body']['items']['item']['ckry_Nm'])
-    print("ckry_Sumry_Info: " + dict_obj['response']['body']['items']['item']['ckry_Sumry_Info'])
-    print("=========================\n")
-    print("재료수:" + dict_obj['response']['body']['items']['item']['food_Cnt'])
-    print("=========================\n")
+    for k in range(0, int(dict_obj['response']['body']['total_Count'])):
+        print()
+        print("=========================")
+        print("fd_Code: " + dict_obj['response']['body']['items']['item'][k]['fd_Code'])
+        print("upper_Fd_Grupp_Nm: " + dict_obj['response']['body']['items']['item'][k]['upper_Fd_Grupp_Nm'])
+        print("fd_Nm: " + dict_obj['response']['body']['items']['item'][k]['fd_Nm'])
+        print("fd_Wgh: " + dict_obj['response']['body']['items']['item'][k]['fd_Wgh'])
+        print("ckry_Nm: " + dict_obj['response']['body']['items']['item'][k]['ckry_Nm'])
+        print("ckry_Sumry_Info: " + dict_obj['response']['body']['items']['item'][k]['ckry_Sumry_Info'])
+        print("재료수:" + dict_obj['response']['body']['items']['item'][k]['food_Cnt'])
+        print("재료목록")
 
-    for i in range(0, int(dict_obj['response']['body']['items']['item']['food_Cnt'])):
-        print("\n")
-        print("food_Code: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['food_Code'])
-        print("food_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['food_Nm'])
-        print("food_Eng_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['food_Eng_Nm'])
-        print("nation_Std_Food_Grupp_Code_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['nation_Std_Food_Grupp_Code_Nm'])
-        print("origin_Code_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['origin_Code_Nm'])
-        print("food_Wgh: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['food_Wgh'])
-        print("allrgy_Info: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['allrgy_Info'])
-        print("onslf_Std_Food_Grupp_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['onslf_Std_Food_Grupp_Nm'])
-        print("amplt_Cl_Nm: " + dict_obj['response']['body']['items']['item']['food_List']['food'][i]['amplt_Cl_Nm'])
-        print("food_Image_Address: " + str(dict_obj['response']['body']['items']['item']['food_List']['food'][i]['food_Image_Address']))
+        for i in range(0, int(dict_obj['response']['body']['items']['item'][k]['food_Cnt'])):
+            print("---------------------------------")
+            print("food_Code: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['food_Code'])
+            print("food_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['food_Nm'])
+            print("food_Eng_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['food_Eng_Nm'])
+            print("nation_Std_Food_Grupp_Code_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['nation_Std_Food_Grupp_Code_Nm'])
+            print("origin_Code_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['origin_Code_Nm'])
+            print("food_Wgh: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['food_Wgh'])
+            print("allrgy_Info: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['allrgy_Info'])
+            print("onslf_Std_Food_Grupp_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['onslf_Std_Food_Grupp_Nm'])
+            print("amplt_Cl_Nm: " + dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['amplt_Cl_Nm'])
+            print("food_Image_Address: " + str(dict_obj['response']['body']['items']['item'][k]['food_List']['food'][i]['food_Image_Address']))
 

@@ -22,11 +22,37 @@ api_url = "https://apis.data.go.kr/1390802/AgriFood/NationStdFood/V3"
 # read api key
 api_key = "api key"
 
+api_uri = f"{api_url}/getKoreanFoodNationStdList"
+
+paramDict = {
+    'serviceKey': api_key,
+    'Page_No': 6,
+    'Page_Size': 20,
+    'fd_Grupp': 'A'
+}
+
+print(api_uri)
+
+# request url
+headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'application/json; charset=utf-8'}
+response = requests.get(api_uri, headers=headers, params=paramDict)
+#print(response.text)
+dict_obj = xmltodict.parse(response.text)
+json_obj = json.dumps(dict_obj)
+print(json_obj)
+
+if dict_obj['response']['header']['result_Code'] == "200":
+    for i in range(0, int(dict_obj['response']['body']['rcdcnt'])):
+        print(dict_obj['response']['body']['items']['item'][i]['food_Nm'])
+        print(dict_obj['response']['body']['items']['item'][i]['food_Code'])
+
+#################################################
+
 api_uri = f"{api_url}/getKoreanFoodNationStdIdntList"
 
 paramDict = {
     'serviceKey': api_key,
-    'food_Code': 'I0170010009a'
+    'food_Code': 'A0160080005a'
 }
 
 print(api_uri)
@@ -40,7 +66,7 @@ response = requests.get(api_uri, headers=headers, params=paramDict)
 
 dict_obj = xmltodict.parse(response.text)
 json_obj = json.dumps(dict_obj)
-print(json_obj)
+#print(json_obj)
 
 # response body
 if dict_obj['response']['header']['result_Code'] == "200":
