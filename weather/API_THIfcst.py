@@ -9,6 +9,7 @@ import json
 import math
 import urllib.request
 import requests
+import xmltodict
 
 # pip install requests
 import requests
@@ -34,4 +35,21 @@ headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'applica
 response = requests.get(api_uri, headers=headers, params=paramDict)
 
 # response body
-print(response.text)
+#print(response.text)
+
+dict_obj = xmltodict.parse(response.text)
+json_obj = json.dumps(dict_obj)
+#print(json_obj)
+
+# response body
+if dict_obj['response']['header']['resultCode'] == "200":
+    for k in range(0, int(len(dict_obj['response']['body']['items']['item']))):
+        print()
+        print("=========================")
+        print("forcast date:", dict_obj['response']['body']['items']['item'][k]['fcstDate'])
+        print("forecast time:", dict_obj['response']['body']['items']['item'][k]['fcstTime'])
+        print("sky:", dict_obj['response']['body']['items']['item'][k]['sky'])
+        print("t3h:", dict_obj['response']['body']['items']['item'][k]['t3h'])
+        print("pop:", dict_obj['response']['body']['items']['item'][k]['pop'])
+        print("reh:", dict_obj['response']['body']['items']['item'][k]['reh'])
+        print("thi:", dict_obj['response']['body']['items']['item'][k]['thi'])
