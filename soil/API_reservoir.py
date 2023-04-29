@@ -69,19 +69,3 @@ for i in range(0, 30):
 
 
 # response body
-'''
-print("시료채취년도: " + json_obj['response']['body']['items']['item']['Any_Year'])
-print("토양검정일: " + json_obj['response']['body']['items']['item']['Exam_Day'])
-print("주소: " + json_obj['response']['body']['items']['item']['PNU_Nm'])
-print("pH: " + json_obj['response']['body']['items']['item']['ACID'])
-print("유기물: " + json_obj['response']['body']['items']['item']['OM'])
-print("유효인산: " + json_obj['response']['body']['items']['item']['VLDPHA'])
-print("유효규산: " + json_obj['response']['body']['items']['item']['VLDSIA'])
-print("마그네슘: " + json_obj['response']['body']['items']['item']['POSIFERT_MG'])
-print("칼륨: " + json_obj['response']['body']['items']['item']['POSIFERT_K'])
-print("칼슘: " + json_obj['response']['body']['items']['item']['POSIFERT_CA'])
-print("전기전도도: " + json_obj['response']['body']['items']['item']['SELC'])
-
-
-'''
-
