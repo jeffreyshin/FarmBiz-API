@@ -34,8 +34,18 @@ print(response.text)
 
 r = response.json()
 
-for i in range(0, 6):
-    print(r[i])
+for i in range(0, int(len(r))):
+        print(r[i]['st'], \
+        r[i]['tm'], \
+        r[i]['plant'], \
+        "growth:", r[i]['growth'], \
+        "gdhacc:", r[i]['gdhacc'], \
+        "gddacc:", r[i]['gddacc'], \
+        "bir:", r[i]['bir'], \
+        "bbs:", r[i]['bbs'], \
+        "cms:", r[i]['cms'], \
+        "cbs:", r[i]['cbs'], \
+        "sbs:", r[i]['sbs'])
 
 # response body
 

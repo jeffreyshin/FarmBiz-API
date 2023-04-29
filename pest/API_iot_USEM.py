@@ -5,7 +5,9 @@ import json
 import datetime as dt
 import pandas as pd
 import matplotlib.pyplot as plt
+import urllib3
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #################################################
 
 def get_data(dt_now, DELTA):
@@ -54,26 +56,26 @@ def get_data(dt_now, DELTA):
     return(usem)
 
 ########################################################
-DDAY = 5
+DDAY = 7
 DELTA = DDAY * 24
 
 # server URL
 api_url_r = "http://iot.rda.go.kr/api"
 # api key : read access
-api_key_r = api key"
+api_key_r = input("IOT portal 인증키를 입력하세요: ")
 
 dt_now = dt.datetime.now()
 date = dt.datetime.strftime(dt_now, "%Y%m%d")
 time = dt.datetime.strftime(dt_now, "%H")
 DELTA2 = int(time) % 12
-print(DELTA2)
+#print(DELTA2)
 
 usem = get_data(dt_now, DELTA+DELTA2)
 
 df_usem = pd.DataFrame(usem)
 
 df_usem = df_usem.sort_values("datetime", ascending = True)
-#print(df_usem)
+print(df_usem)
 
 df_usem.to_csv("./usem.csv", index = False)
 
@@ -84,11 +86,11 @@ api_url_botrytis = 'http://147.46.206.95:7898/Botrytis'
 headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'multipart/form-data; charset=utf-8'}
 file = {'file': open('usem.csv', 'rb')}
 
-response = requests.post(api_url_botrytis, files=file)
+response = requests.post(api_url_anthracnose, files=file)
 
 r = response.json()
 output = json.loads(r['output'])
-print(json.dumps(output))
+#print(json.dumps(output))
 
 x = list()
 DATE = list()

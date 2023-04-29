@@ -19,7 +19,7 @@ import json
 api_url = "http://api.vworld.kr/req/address"
 
 # read api key
-api_key = "API_KEY"
+api_key = input("vworld 인증키를 입력하세요: ")
 
 paramDict = {
     "service": "address",

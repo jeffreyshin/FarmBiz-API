@@ -19,7 +19,7 @@ import json
 api_url = "http://apis.data.go.kr/1390906/thiForecastApi_gong"
 
 # api key
-api_key = "API KEY"
+api_key = input("인증키를 입력하세요: ")
 
 api_uri = f"{api_url}/getList_thiForecastApi"
 print(api_uri)

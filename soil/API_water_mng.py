@@ -14,7 +14,7 @@ import requests
 api_url = "http://www.naas.go.kr/unityapi/service/byPass/SoilEnviron/waterPrscrptn"
 
 # read api key
-api_key = "API KEY"
+api_key = input("밭작물물관리 API 인증키를 입력하세요: ")
 
 api_uri = f"{api_url}/getWaterPrscrptn"
 

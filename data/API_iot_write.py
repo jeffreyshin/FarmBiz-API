@@ -6,6 +6,7 @@ import json
 '''
 api uri
 /api/{read_api_key}/{date}/{hour}
+/api/w4460bcc0494f41f6a3af01e54bd80c13/20191121/13
 
 success response
 {
@@ -23,7 +24,8 @@ success response
 # iot server URL
 api_url_w = "http://iot.rda.go.kr:12345/colct/api/registData.do"
 # api key: write access
-# api_key_w ="API KEY"
+# api_key_w = "w01da392c1d974d9d91a7272de1e28deb"
+api_key_w = "w6e0efaabadbc47ff9f0727c1b82166b5"
 
 # key=iot_keyvalue&column1=value1&column22=value2...
 query_string = f"?key={api_key_w}"

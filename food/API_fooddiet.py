@@ -20,7 +20,7 @@ import xmltodict
 api_url = "http://apis.data.go.kr/1390802/AgriFood/FdFoodCkryImage"
 
 # read api key
-api_key = "api key"
+api_key = input("인증키를 입력하세요: ")
 
 api_uri = f"{api_url}/getKoreanFoodFdFoodCkryImageList"
 
@@ -31,7 +31,7 @@ paramDict = {
     'service_Type': 'xml',
     'Page_No': 1,
     'Page_Size': 20,
-    'food_Name': '죽',
+    'food_Name': '전',
     'ckry_Name': '조리법'
 }
 

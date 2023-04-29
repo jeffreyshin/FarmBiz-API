@@ -17,7 +17,7 @@ import xmltodict
 api_url = "http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList"
 
 # read api key
-api_key = "API_KEY"
+api_key = input("인증키를 입력하세요: ")
 
 paramDict = {
     'serviceKey': api_key,

@@ -27,7 +27,7 @@ response = requests.post(api_url_greentom2, files=file)
 
 #print(response.status_code)
 #print(response.headers)
-#print(response.text)
+print(response.text)
 
 with open('greentom2.out', 'w') as file_data:
    file_data.write(response.text)

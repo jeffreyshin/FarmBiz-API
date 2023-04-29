@@ -24,7 +24,8 @@ success response
 # server URL
 api_url_r = "http://iot.rda.go.kr/api"
 # api key : read access
-api_key_r = "API KEY"
+# api_key_r = "rd9c255a9ca634d048553c151f60d9028"
+api_key_r = "r989ec76c2c8646918b8fe4f50744ecd4"
 
 # data logging date and time
 date ="20230308"

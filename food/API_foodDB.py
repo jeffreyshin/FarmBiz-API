@@ -20,7 +20,7 @@ import xmltodict
 api_url = "https://apis.data.go.kr/1390802/AgriFood/NationStdFood/V3"
 
 # read api key
-api_key = "api key"
+api_key = input("인증키를 입력하세요: ")
 
 api_uri = f"{api_url}/getKoreanFoodNationStdList"
 

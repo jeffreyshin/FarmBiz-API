@@ -14,7 +14,7 @@ import requests
 api_url = "http://apis.data.go.kr/1390802/SoilEnviron/SoilCharac/V2"
 
 # read api key
-api_key = "API KEY"
+api_key = input("인증키를 입력하세요: ")
 
 api_uri = f"{api_url}/getSoilCharacter"
 

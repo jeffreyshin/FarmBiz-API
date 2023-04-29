@@ -5,7 +5,7 @@ import json
 import datetime as dt
 
 # server URL
-serviceKey = "API KEY"
+api_key = input("datamart_스마트팜혁신밸리 : 인증키를 입력하세요: ")
 
 # data logging date and time
 
@@ -45,10 +45,11 @@ print(fcltyId[23])
 
 api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{userId_m}"
 response = requests.get(api_uri, verify=False)
-print(response.text)
+print()
+r = response.json()
+print(json.dumps(r))
 
-
-measDate = "20230420"
+measDate = "20230425"
 
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getEnvDataList"
 api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{measDate}"
