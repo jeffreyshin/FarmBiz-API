@@ -5,7 +5,7 @@ import json
 import datetime as dt
 
 # server URL
-api_key = input("datamart_스마트팜혁신밸리 : 인증키를 입력하세요: ")
+serviceKey = input("datamart_스마트팜혁신밸리 : 인증키를 입력하세요: ")
 
 # data logging date and time
 
