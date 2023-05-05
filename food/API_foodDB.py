@@ -3,7 +3,7 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-# _*_ coding: utf-8 _*_ 
+# _*_ coding: utf-8 _*_
 
 import json
 import math
