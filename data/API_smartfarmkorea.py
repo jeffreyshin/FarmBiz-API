@@ -9,11 +9,12 @@ import datetime as dt
 # server URL
 serviceKey = input("datamart_스마트팜혁신밸리 : 인증키를 입력하세요: ")
 
-# data logging date and time
+#########################################
+# 농가ID정보
+#########################################
 
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getIdentityDataList"
 api_uri = f"{api_url}/{serviceKey}"
-
 print(api_uri)
 
 # request url
@@ -26,6 +27,10 @@ json_obj = json.loads(response.text)
 
 # response body
 #print(len(json_obj))
+
+#########################################
+# 작기정보
+#########################################
 
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getCroppingSeasonDataList"
 
@@ -49,10 +54,14 @@ api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{userId_m}"
 response = requests.get(api_uri, verify=False)
 print()
 r = response.json()
+print('##########################################')
 print("김기형 농가 작기정보:\n", json.dumps(r,indent = 4, sort_keys = True))
+print('##########################################')
 
 
-##############################################
+#########################################
+# 환경정보 항목별 데이터 추출
+#########################################
 
 def addValue():
     TI = list()
@@ -125,7 +134,10 @@ def addValue():
     df_M = pd.merge(df_M, df_CI, how = 'outer')
     return df_M
 
-##############################################
+#########################################
+# 환경정보 조회
+#########################################
+
 #dt_now = dt.datetime.now()
 #endDate = dt.datetime.strftime(dt_now, "%Y%m%d")
 startDt = input("조회 시작일을 입력하세요(yyyyMMdd): ")
@@ -134,21 +146,17 @@ endDt = input("조회 종료일을 입력하세요(yyyyMMdd): ")
 startDate = dt.datetime.strptime(startDt, "%Y%m%d")
 endDate = dt.datetime.strptime(endDt, "%Y%m%d")
 
-date_diff = endDate - startDate
-
-dt_now = startDate
-print(date_diff.days)
-
 df_MM = pd.DataFrame(columns = ['measDate', 'TI', 'HI02', 'CI'])
-print(df_MM)
+date_diff = endDate - startDate
+dt_now = startDate
+api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getEnvDataList"
 
 for i in range(0, date_diff.days):
     measDate = dt_now.strftime("%Y%m%d")
-    api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getEnvDataList"
     api_uri = f"{api_url}/{serviceKey}/{fcltyId_m}/{measDate}"
     response = requests.get(api_uri, verify=False)
     json_obj = response.json()
-    print(json.dumps(json_obj, indent=4, sort_keys=True))
+#    print(json.dumps(json_obj, indent=4, sort_keys=True))
 
     dt_now = dt_now + dt.timedelta(days=1)
     df_M = addValue()
@@ -158,3 +166,14 @@ print(df_MM)
 df_MM.to_csv("./smartfarmKorea.csv", index = False)
 
 #    dt_now = dt.datetime.strptime(json_obj[0]['measDate'], "%Y-%m-%d %H:%M:%S")
+
+#########################################
+# 생육정보 조회: 해당농가의 생육조사 일련번호(crpsnSn)가 뭔지 알 수 없음
+#########################################
+api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getExaminDataList"
+crpsnSn = 1
+api_uri = f"{api_url}/{serviceKey}/{crpsnSn}"
+response = requests.get(api_uri, verify=False)
+json_obj = response.json()
+print(json.dumps(json_obj, indent=4, sort_keys=True))
+
