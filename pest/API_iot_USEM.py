@@ -56,7 +56,7 @@ def get_data(dt_now, DELTA):
     return(usem)
 
 ########################################################
-DDAY = 7
+DDAY = 1
 DELTA = DDAY * 24
 
 # server URL
