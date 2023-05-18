@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
 #################################################
 
 def get_data(dt_now, DELTA):
-
     custom_dt = ["0"] * DELTA
     datetime = ["0"] * DELTA
     humidity = [0] * DELTA
@@ -25,14 +26,15 @@ def get_data(dt_now, DELTA):
     for i in range(0, DELTA):
         date = dt.datetime.strftime(dt_run, "%Y%m%d")
         time = dt.datetime.strftime(dt_run, "%H")
-        #print(i, date, time)
-        dt_run = dt_run + dt.timedelta(hours = 1)
+        # print(i, date, time)
+        dt_run = dt_run + dt.timedelta(hours=1)
         api_uri = f"{api_url_r}/{api_key_r}/{date}/{time}"
+        print(api_uri)
 
-# request url
+        # request url
         response = requests.get(api_uri, verify=False)
 
-# response body
+        # response body
         json_obj = json.loads(response.text)
 
         custom_dt[i] = json_obj['datas'][0]['custom_dt']
@@ -49,14 +51,15 @@ def get_data(dt_now, DELTA):
     usem['temperature'] = temperature
     usem['humidity'] = humidity
     usem['leafwet'] = leafwet
-#    usem['soiltemp'] = soiltemp
-#    usem['co2'] = co2
-#    usem['quantum'] = quantum
+    #    usem['soiltemp'] = soiltemp
+    #    usem['co2'] = co2
+    #    usem['quantum'] = quantum
 
-    return(usem)
+    return (usem)
+
 
 ########################################################
-DDAY = 1
+DDAY = 3
 DELTA = DDAY * 24
 
 # server URL
@@ -68,16 +71,19 @@ dt_now = dt.datetime.now()
 date = dt.datetime.strftime(dt_now, "%Y%m%d")
 time = dt.datetime.strftime(dt_now, "%H")
 DELTA2 = int(time) % 12
-#print(DELTA2)
+if int(time) < 12:
+    DELTA2 = DELTA2 + 12
 
-usem = get_data(dt_now, DELTA+DELTA2)
+# print(DELTA2)
+
+usem = get_data(dt_now, DELTA + DELTA2)
 
 df_usem = pd.DataFrame(usem)
 
-df_usem = df_usem.sort_values("datetime", ascending = True)
+df_usem = df_usem.sort_values("datetime", ascending=True)
 print(df_usem)
 
-df_usem.to_csv("./usem.csv", index = False)
+df_usem.to_csv("./usem.csv", index=False)
 
 # server URL
 api_url_anthracnose = 'http://147.46.206.95:7897/Anthracnose'
@@ -90,7 +96,7 @@ response = requests.post(api_url_anthracnose, files=file)
 
 r = response.json()
 output = json.loads(r['output'])
-#print(json.dumps(output))
+print(json.dumps(output, indent=4, sort_keys=True))
 
 x = list()
 DATE = list()
@@ -98,7 +104,7 @@ PINF = list()
 LW = list()
 WT = list()
 
-for i in range(0, DDAY+1):
+for i in range(0, DDAY + 1):
     DATE.append(output[f'{i}']['date'])
     PINF.append(output[f'{i}']['PINF'])
     LW.append(output[f'{i}']['LW'])
@@ -107,8 +113,8 @@ for i in range(0, DDAY+1):
 x = range(len(PINF))
 
 plt.scatter(x, PINF)
-#plt.scatter(x, LW)
-#plt.plot(x, WT)
+# plt.scatter(x, LW)
+# plt.plot(x, WT)
 plt.title("Scatter Plot of the data")
 plt.xlabel("X")
 plt.ylabel("PINF")
