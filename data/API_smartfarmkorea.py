@@ -167,9 +167,9 @@ df_MM.to_csv("./smartfarmKorea.csv", index = False)
 
 #    dt_now = dt.datetime.strptime(json_obj[0]['measDate'], "%Y-%m-%d %H:%M:%S")
 
-#########################################
+##########################################
 # 생육정보 조회: 해당농가의 생육조사 일련번호(crpsnSn)가 뭔지 알 수 없음
-#########################################
+##########################################
 api_url = "http://www.smartfarmkorea.net/Agree_WS/webservices/InnovationValleyRestService/getExaminDataList"
 crpsnSn = 1
 api_uri = f"{api_url}/{serviceKey}/{crpsnSn}"
