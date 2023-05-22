@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e1f99cf5-cbc4-46d0-9934-d7e325d56859" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/smartfarmKorea.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/smartfarmKorea.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/API_iot_USEM.py" beforeDir="false" afterPath="$PROJECT_DIR$/pest/API_iot_USEM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/usem.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pest/usem.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food/API_fooddiet.py" beforeDir="false" afterPath="$PROJECT_DIR$/food/API_fooddiet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +33,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.API_iot_USEM">
-    <configuration name="API_foodDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.API_fooddiet">
+    <configuration name="API_fooddiet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FarmBiz-API" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +46,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/food/API_foodDB.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/food/API_fooddiet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.API_fooddiet" />
         <item itemvalue="Python.API_iot_USEM" />
         <item itemvalue="Python.API_smartfarmkorea" />
         <item itemvalue="Python.API_rapid_d" />
         <item itemvalue="Python.API_soil_char03" />
-        <item itemvalue="Python.API_foodDB" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682770352252</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1684559297374</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684559297374</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
