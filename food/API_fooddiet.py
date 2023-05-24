@@ -31,7 +31,7 @@ paramDict = {
     'service_Type': 'xml',
     'Page_No': 1,
     'Page_Size': 20,
-    'food_Name': '밥',
+    'food_Name': '고기',
     'ckry_Name': '조리'
 }
 
