@@ -25,16 +25,18 @@ api_uri = f"{api_url}/getVilageFcst"
 dt_now = dt.datetime.now()
 date = dt.datetime.strftime(dt_now, "%Y%m%d")
 time = dt.datetime.strftime(dt_now, "%H00")
+# if time == "0000":
+time = "0800"
 
 
 paramDict = {
     'serviceKey': api_key,
     'numOfRows': 200,
-    'pageNo': 1,
+    'pageNo': 4,
     'dataType': 'json',
     'base_date': date,
     'base_time': time,
-    'nx': 55,
+    'nx': 38,
     'ny': 127
 }
 
@@ -45,9 +47,9 @@ headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'applica
 response = requests.get(api_uri, headers=headers, params=paramDict)
 
 # response body
-#print(response.text)
+print(response.text)
 dict_obj = response.json()
-#print(dict_obj)
+print(dict_obj)
 
 if dict_obj['response']['header']['resultCode'] == "00":
     print("basetime:", dict_obj['response']['body']['items']['item'][0]['baseDate'], \

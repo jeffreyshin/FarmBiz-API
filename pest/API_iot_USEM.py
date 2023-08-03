@@ -59,7 +59,7 @@ def get_data(dt_now, DELTA):
 
 
 ########################################################
-DDAY = 3
+DDAY = 2
 DELTA = DDAY * 24
 
 # server URL
@@ -105,10 +105,10 @@ LW = list()
 WT = list()
 
 for i in range(0, DDAY + 1):
-    DATE.append(output[f'{i}']['date'])
-    PINF.append(output[f'{i}']['PINF'])
-    LW.append(output[f'{i}']['LW'])
-    WT.append(output[f'{i}']['WT'])
+    DATE.append(output[i]['date'])
+    PINF.append(output[i]['PINF'])
+    LW.append(output[i]['LW'])
+    WT.append(output[i]['WT'])
 
 x = range(len(PINF))
 
