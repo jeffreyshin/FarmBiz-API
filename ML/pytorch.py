@@ -15,18 +15,21 @@ import glob
 
 stn_number = "114"
 dir_path = "."   #dataset/ASOS/" + stn_number
-filename = glob.glob(dir_path + "/*.csv")
-df = pd.read_csv(filename[0], encoding="cp949")
-df.columns = ["stn_no","stn_name","date","temperature","RI","WS","humidity"]
-df = df.drop(columns=["stn_no","stn_name","date","temperature","RI"])
+filename = glob.glob(dir_path + "/data_gongju.csv")
+# df = pd.read_csv(filename[0], encoding="cp949")
+df = pd.read_csv("./data_gonju.csv", encoding="cp949")
+
+df.columns = ["stn_no","stn_name","date","temperature","WS","RI","pressure", "humidity", "itemp", "ihumidity", "leafwet"]
+df = df.drop(columns=["stn_no","stn_name","WS","RI", "pressure", "ihumidity", "leafwet"])
 
 print(df.isnull().sum())
 df = df.dropna()
 print(df.isnull().sum())
 
 # 데이터를 tensor로 변경
-X_train = torch.Tensor([[x] for x in list(df.humidity)])
-y_train = torch.torch.FloatTensor([[x] for x in list(df.WS)])
+X_train = torch.Tensor([[x] for x in list(df.temperature)])
+x2_train = torch.Tensor([[x] for x in list(df.humidity)])
+y_train = torch.torch.FloatTensor([[x] for x in list(df.itemp)])
 
 # TensorDataset으로 변경
 train_data = TensorDataset(X_train, y_train)
@@ -50,7 +53,7 @@ loss_fn = torch.nn.MSELoss()
 # 활성화함수 설정 : Adam
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
-num_epochs = 100
+num_epochs = 200
 
 for epoch in range(num_epochs):
     for step, (xb, yb) in enumerate(train_dl):
@@ -63,5 +66,11 @@ for epoch in range(num_epochs):
 
 print(pred)
 
-sns.jointplot(x=df["humidity"], y=df["WS"])
+
+
+# sns.jointplot(x=df["itemp"], y=df["temperature"])
+
+plt.plot(df["date"], df["temperature"], 'ro', label='target')
+plt.plot(df["date"], df["itemp"], 'bo', label='target')
+
 plt.show()
