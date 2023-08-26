@@ -5,127 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1f99cf5-cbc4-46d0-9934-d7e325d56859" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/ML/7_1_vanilla_rnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ML/data/imgA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ML/data/imgB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ML/data/kospi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ML/data/reg.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/1. 데이터 관련.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/10.1 CAM.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/10.2 t-SNE, PCA.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/11.2 MAML regression.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/11.3 MAML classification.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/12.1 Finite Difference Method.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.1 variable_print_library.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.10 argparse.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.2 list_tuple_dict.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.3 Numpy.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.4 If_for_while.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.5 Function.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.6 Module.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.7 Class.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.8 Plotting.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/2.9 Folder and path.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/3.3 Data split.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/4.1 Tensor.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/4.2 Autograd.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/4.2 Backpropagation.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/4.3 Data Loader(기본편).ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/4.3 Data Loader(심화편).ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/5.1 Linear Regression.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/5.1 MLP.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/5.4 Optimizers.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/5.5 Cross-Validation.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/5.6 Model parameters.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/6.2 CNN - AlexNet.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/6.3 CNN - ReNet.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/7.1 Vanilla RNN.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/7.2 GRU.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/7.2 LSTM.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/7.3 Bi-LSTM.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.2 Kmeans Clustering.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.3 Convolutional Autoencoder.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.3 Denoising Autoencoder.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.3 Stacked Autoencoder.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.4 DCGAN.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.4 GAN.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.5 Style Transfer.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/8.6 Deep k-Means.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.1 DisturbLabel.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.1 DisturbValue.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.1 Early stopping.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.1 Label Smoothing.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.1 Regularization.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.2 Data Imbalance.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.3 Model Freezing.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.3 Transfer Learning.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/9.4 Semi-supervised Learning.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/data/Cylinder2D_flower.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/evaluation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/execute_HFM.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/hfm_0.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/hfm_0_last.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/mat_to_numpy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/results/from full data/error_graph.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/results/from full data/last_time_prediction.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/HFM/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/arg_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/lion/dummy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/lion/dummy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/lion/dummy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/lion/dummy4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/class/tiger/dummy9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/confusion_matrix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/data/imgA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/data/imgB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/data/kospi.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/data/reg.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/execute.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/fashion_items_dc.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/fashion_items_gan.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/gan_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar10_resnet18.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_alexnet.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_maml.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_model_for_pseudo_baseline.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_model_for_pseudo_label.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_model_for_pseudo_label2.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_resnet.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_resnet_disturblabel.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_resnet_early.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/cifar_resnet_labelsmoothing.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/dkm_clt.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/dkm_de.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/dkm_en.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/fmnist_disc.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/fmnist_disc_dcgan.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/fmnist_gner.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/fmnist_gner_dcgan.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/models/stl10_resnet18.pth" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pytorch_sample/module_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/API_farmdure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pest/API_pesticideinfo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/ASOS.csv0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/AWS_gonju.csv0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/ML_gonju.csv0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/MY2019_Fuel_Consumption_Ratings.csv0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/data.csv0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/data_gonju.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,28 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.API_farmdure">
-    <configuration name="7_2_lstm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FarmBiz-API" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/7_2_lstm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.API_pesticideinfo">
     <configuration name="API_farmdure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FarmBiz-API" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,6 +79,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weather/API_kma_vilagefcst.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="API_pesticideinfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FarmBiz-API" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pest/API_pesticideinfo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -271,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.API_pesticideinfo" />
         <item itemvalue="Python.API_farmdure" />
         <item itemvalue="Python.simulation" />
         <item itemvalue="Python.API_kma_vilagefcst" />
         <item itemvalue="Python.LSTM" />
-        <item itemvalue="Python.7_2_lstm" />
       </list>
     </recent_temporary>
   </component>
