@@ -39,17 +39,20 @@ json_obj = xmltodict.parse(response.text)
 # print(json.dumps(json_obj, indent = 4, sort_keys = True))
 
 for i in range(0, int(len(json_obj['service']['list']['item']))):
-    print(i, "---------------------- ")
-    print(json_obj['service']['list']['item'][i]['examinSpchcknCode'])
-    print(json_obj['service']['list']['item'][i]['examinSpchcknNm'])
-    print(json_obj['service']['list']['item'][i]['examinTmrd'])
-    print(json_obj['service']['list']['item'][i]['examinYear'])
-    print(json_obj['service']['list']['item'][i]['inputStdrDatetm'])
-    print(json_obj['service']['list']['item'][i]['insectKey'])
-    print(json_obj['service']['list']['item'][i]['kncrCode'])
-    print(json_obj['service']['list']['item'][i]['kncrNm'])
-    print(json_obj['service']['list']['item'][i]['predictnSpchcknCode'])
-    print(json_obj['service']['list']['item'][i]['predictnSpchcknNm'])
+    if json_obj['service']['list']['item'][i]['kncrNm'] == '논벼'  and \
+            json_obj['service']['list']['item'][i]['examinYear'] == '2022':
+           # json_obj['service']['list']['item'][i]['insectKey'] == '202200204FC01010101322005':
+        print(i, "---------------------- ")
+        # print(json_obj['service']['list']['item'][i]['examinSpchcknCode'])
+        print(json_obj['service']['list']['item'][i]['examinSpchcknNm'])
+        print(json_obj['service']['list']['item'][i]['examinTmrd'])
+        print(json_obj['service']['list']['item'][i]['examinYear'])
+        print(json_obj['service']['list']['item'][i]['inputStdrDatetm'])
+        print(json_obj['service']['list']['item'][i]['insectKey'])
+        # print(json_obj['service']['list']['item'][i]['kncrCode'])
+        print(json_obj['service']['list']['item'][i]['kncrNm'])
+        # print(json_obj['service']['list']['item'][i]['predictnSpchcknCode'])
+        print(json_obj['service']['list']['item'][i]['predictnSpchcknNm'])
 
 
 
