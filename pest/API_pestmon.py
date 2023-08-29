@@ -22,7 +22,9 @@ api_uri = f"{api_url}"
 paramDict = {
     'apiKey': api_key,
     'serviceCode': 'SVC51',
-    'cropName' : '벼'
+    # 'serviceType': 'AA001'
+    # 'cropName': '논벼',
+    # 'sickNameKor': '깨씨무늬병'
 }
 
 print(api_uri)
@@ -35,27 +37,68 @@ response = requests.get(api_uri, params=paramDict)
 
 json_obj = xmltodict.parse(response.text)
 
-# print(json_obj)
 # print(json.dumps(json_obj, indent = 4, sort_keys = True))
 
+##################################################
+list_insect = []
+list_surveyDate = []
+
 for i in range(0, int(len(json_obj['service']['list']['item']))):
-    if json_obj['service']['list']['item'][i]['kncrNm'] == '논벼'  and \
-            json_obj['service']['list']['item'][i]['examinYear'] == '2022':
-           # json_obj['service']['list']['item'][i]['insectKey'] == '202200204FC01010101322005':
+    if json_obj['service']['list']['item'][i]['kncrNm'] == '논벼' and \
+            json_obj['service']['list']['item'][i]['examinYear'] == '2023':
         print(i, "---------------------- ")
-        # print(json_obj['service']['list']['item'][i]['examinSpchcknCode'])
-        print(json_obj['service']['list']['item'][i]['examinSpchcknNm'])
-        print(json_obj['service']['list']['item'][i]['examinTmrd'])
-        print(json_obj['service']['list']['item'][i]['examinYear'])
-        print(json_obj['service']['list']['item'][i]['inputStdrDatetm'])
-        print(json_obj['service']['list']['item'][i]['insectKey'])
-        # print(json_obj['service']['list']['item'][i]['kncrCode'])
-        print(json_obj['service']['list']['item'][i]['kncrNm'])
-        # print(json_obj['service']['list']['item'][i]['predictnSpchcknCode'])
-        print(json_obj['service']['list']['item'][i]['predictnSpchcknNm'])
+        # print(json_obj['service']['list']['item'][i]['predictnSpchcknNm'])
+        # print(json_obj['service']['list']['item'][i]['inputStdrDatetm'])
+        list_insect.append(json_obj['service']['list']['item'][i]['insectKey'])
+        list_surveyDate.append(json_obj['service']['list']['item'][i]['inputStdrDatetm'])
 
 
+sido_code = 45
+ii = 0
 
-# response body
+for insect_key in list_insect:
+    paramDict2 = {
+        'apiKey': api_key,
+        'serviceCode': 'SVC53',
+        'serviceType': 'AA001',
+        'insectKey': insect_key,
+        'sidoCode': sido_code
+    }
+    response2 = requests.get(api_uri, params=paramDict2)
+    # print(response2.text)
+    json_obj2 = xmltodict.parse(response2.text)
 
+    # print(json.dumps(json_obj2, indent = 4, sort_keys = True))
 
+    print(int(len(json_obj2['service']['list'])))
+    print(list_surveyDate[ii], json_obj2['service']['insectKey'], json_obj2['service']['examinTmrd'], \
+          json_obj2['service']['examinSpchcknNm'])
+
+    l = json_obj2['service']['list']
+    # print(l)
+    l = l.replace("=", ":")
+    l = l.replace("inqireValue", "\"inquireValue\"")
+    l = l.replace("inqireCnClCode", "\"inqireCnClCode\"")
+    l = l.replace("pageUnit", "\"pageUnit\"")
+    l = l.replace("pageIndex", "\"pageIndex\"")
+    l = l.replace("pageSize", "\"pageSize\"")
+    l = l.replace("sidoNm", "\"sidoNm\"")
+    l = l.replace("sidoCode", "\"sidoCode\"")
+    l = l.replace("dbyhsNm", "\"dbyhsNm\"")
+    l = l.replace("sigunguNm", "\"sigunguNm\"")
+    l = l.replace("sigunguCode", "\"sigunguCode\"")
+    l = l.replace(":", ":\"")
+    l = l.replace("},", "\"},")
+    l = l.replace(", \"", "\", \"")
+    l = l.replace("}]", "\"}]")
+
+    # print(l)
+
+    dict = eval(l)
+
+    for i in range(0, len(dict)):
+        if float(dict[i]['inquireValue']) > 0:
+            print(dict[i]['sigunguNm'], dict[i]['dbyhsNm'], str(dict[i]['inquireValue']))
+
+    print("==========================")
+    ii = ii+1
