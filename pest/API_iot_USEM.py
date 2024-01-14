@@ -33,8 +33,9 @@ def get_data(dt_now, DELTA):
 
         # request url
         response = requests.get(api_uri, verify=False)
-
+        # print(response.text)
         # response body
+
         json_obj = json.loads(response.text)
 
         custom_dt[i] = json_obj['datas'][0]['custom_dt']
@@ -59,7 +60,7 @@ def get_data(dt_now, DELTA):
 
 
 ########################################################
-DDAY = 2
+DDAY = 1
 DELTA = DDAY * 24
 
 # server URL
@@ -74,7 +75,7 @@ DELTA2 = int(time) % 12
 if int(time) < 12:
     DELTA2 = DELTA2 + 12
 
-# print(DELTA2)
+print(DELTA2)
 
 usem = get_data(dt_now, DELTA + DELTA2)
 
