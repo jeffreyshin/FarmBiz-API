@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title> API</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="static/assets/css/main.css" type="text/css" />
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Logo -->
+			<h1><a href="https://camp.re.kr" id="logo">Community Agricultural Model Platform</a></h1>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li class="current"><a href="/"> API</a></li>
+				</ul>
+			</nav>
+
+		</div>
+
+		<!-- Banner -->
+		<section id="banner">
+		</section>
+	</div>
+	<!-- Highlights -->
+
+
+	<!-- Posts -->
+	<section id="wrapper" class="wrapper-post">
+		<div class="container">
+			<div class="col-8 col-16-narrower">
+				<table>
+				<tr>
+					 <td>
+						<h2>서비스명 : </h2>
+					</td>
+					<td>
+						<h2>  Model API </h2>
+					</td> 
+				</tr>
+				<tr>
+					<td>
+						<h2> 상세기능 :</h2>
+					</td>
+					<td>
+						<h2> 모델을 구동하기 위한 API 입니다. </h2>
+						<h3>모델의 입력자료를 압축파일 형식으로 준비해주세요. </h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h2>서비스 URL:</h2>
+					</td>
+					<td>
+						<h2></h2>
+					</td>
+				</tr>				
+				</table>
+			</div>
+		</div>
+		<div class="container">	
+			<div class="box-post">
+				<h2>Step 1. getSample</h2>
+				<h3>모델을 구동하기 위한 샘플 입력파일을 다운로드 받습니다. </h3>
+				<p> api_key 항목을 입력하고 "실행" 버튼을 클릭하면 getSample 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="getSample", json={api_key = "your_api_key_here"})
+				</p>
+				<form method="post" action="/"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-8">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+					
+						<button type="submit" name="action" value="getSample" class="btn btn-primary"
+							style="float:right;">실행</button>
+					</div>
+				</form>
+				
+				<br><br><p><textarea readonly> 실행 후 오른쪽 상단의 다운로드 아이콘을 확인하세요. </textarea></p>
+						
+			</div>	
+		</div>
+		<div class="container">
+			<div class="box-post">
+				<h2>Step 2. connect</h2>
+				<h3>모델 구동에 필요한 세션을 생성하고 잡아이디 값을 받습니다. </h3>
+				<p>api_key 항목을 입력하고 "실행" 버튼을 클릭하면 connect 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="connect", json={api_key = "your_api_key_here"})
+				</p>
+				<form method="post" action="/"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-2">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+
+						<button type="submit" name="action" value="connect" class="btn btn-primary"
+						style="float:right;">실행</button>
+					</div>
+				</form>
+
+				
+				<br><br><p><textarea readonly> connect 명령어를 사용한 결과가 여기에 출력됩니다. </textarea></p>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="box-post">
+				<h2>Step 3. launch</h2>
+				<h3>2번에서 생성한 잡아이디와 api_key를 사용하여 모델을 구동합니다. 
+					<br> 모델의 입력파일들을 하나의 zip파일로 압축하여 첨부해주세요. 
+				</h3>
+				<p>api_key 항목, jobid 항목을 입력하고 zip으로 압축된 입력파일을 첨부해주세요.
+					<br>"실행" 버튼을 클릭하면 launch 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="launch", 
+					<br> json={api_key = "your_api_key_here", key="your_jobid", file="your_encoded_file"})
+					<br> *입력파일은 base64로 encoding 하여 json에 추가해주세요. 
+				</p>
+
+				<form method="post" action="/" enctype="multipart/form-data"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-2">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+						<label for="name">jobid</label>
+						<input type="text" id="name" name="launch" required>
+						<label for="name">zipped input file</label>
+						<input type="file" id="file" name="file" style="float:left;" required>
+						<br>
+						<button type="submit" name="action" value="launch" class="btn btn-success"
+						style="float:right;">실행</button>
+					</div>
+				</form>
+				
+				<br><br><p><textarea readonly> 
+							launch 명령어를 사용한 결과가 여기에 출력됩니다.  
+							모델 구동결과는 getOutput 명령어를 사용해야 합니다. 
+							</textarea></p>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="box-post">
+				<h2>Step 4. getStatus</h2>
+				<h3>api_key값과 잡아이디값을 사용하여 모델 구동이 완료되었는지 상태를 확인합니다. </h3>
+				<p>api_key 항목, jobid 항목을 입력하고 "실행" 버튼을 클릭하면 getStatus 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="getStatus", 
+					<br> json={api_key = "your_api_key_here", key="your_jobid"})
+				</p>
+
+				<form method="post" action="/"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-2">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+						<label for="name">jobid</label>
+						<input type="text" id="name" name="getStatus" required>
+					</div>
+					<button type="submit" name="action" value="getStatus" class="btn btn-success"
+						style="float:right;">실행</button>
+				</form>
+				
+				<br><br><p><textarea readonly> getStatus 명령어를 사용한 결과가 여기에 출력됩니다. </textarea></p>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="box-post">
+				<h2>Step 5. getOutput</h2>
+				<h3>api_key값과 잡아이디값을 사용하여 모델 출력파일을 다운로드합니다. </h3>
+				<p>api_key 항목, jobid 항목을 입력하고 "실행" 버튼을 클릭하면 getOutput 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="getOutput", 
+					<br> json={api_key = "your_api_key_here", key="your_jobid"})
+				</p>
+				<form method="post" action="/"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-2">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+						<label for="name">key</label>
+						<input type="text" id="name" name="getOutput" required>
+						<label for="name">variable</label>
+						<input type="text" id="name" name="variable" required>
+					</div>
+					<button type="submit" name="action" value="getOutput" class="btn btn-success"
+						style="float:right;">실행</button>
+				</form>
+				
+				<br><br><p><textarea readonly> 
+					getOutput 명령어를 사용한 결과가 여기에 출력됩니다. 
+					모델 구동이 완료된 경우, 웹브라우저에서 파일 다운로드 받기가 가능합니다.  
+				</textarea></p>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="box-post">
+				<h2>Step 6. disconnet</h2>
+				<h3>모델 구동 세션을 종료합니다. </h3>
+				<p>api_key 항목, jobid 항목을 입력하고 "실행" 버튼을 클릭하면 disconnect 명령어를 사용해 볼 수 있습니다. 
+					<br> python을 사용할 때에는 다음과 같이 사용할 수 있습니다. 
+					<br> res = requests.post(url="disconnect", 
+					<br> json={api_key = "your_api_key_here", key="your_jobid"})
+				</p>
+
+				<form method="post" action="/"
+					class="d-flex justify-content-between align-items-center">
+					<div class="form group flex-grow-1 mr-2">
+						<label for="name">api_key</label>
+						<input type="text" id="name" name="apiKey" required>
+						<label for="name">jobid</label>
+						<input type="text" id="name" name="disconnect" required>
+						<button type="submit" name="action" value="disconnect" class="btn btn-success"
+							style="float:right;">실행</button>
+				</form>
+				
+				<br><br><p><textarea readonly>
+					disconnect 명령어를 사용한 결과가 여기에 출력됩니다. 
+				</textarea></p>
+				
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+			</div>
+
+			<!-- Icons -->
+<!--
+				<ul class="icons">
+				<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+			</ul>
+-->
+			<!-- Copyright -->
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; API 개발자에 대한 지적 재산권 정보가 추가됩니다.</li>
+					<li>웹페이지 디자인을 위해 <a href="http://html5up.net">HTML5 UP</a>이 사용되었습니다. </li>
+					
+				</ul>
+			</div>
+
+			<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.dropotron.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
