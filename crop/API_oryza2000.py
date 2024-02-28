@@ -9,9 +9,9 @@ def fileToBase64(filepath):
     return base64.b64encode(data).decode("utf-8")
 
 # get Sample
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/getSample'
+url = 'https://oryza-api.camp.re.kr/Oryza/getSample'
 apikey = '61cdc660a46f4fcc93004de201c58dff'
-param = { "apiKey" : apikey}
+param = {"apiKey": apikey}
 res = requests.post(url=url, json=param)
 
 if res.status_code == 200:
@@ -20,23 +20,25 @@ if res.status_code == 200:
         file.write(res.content)
 
 # create session
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/connect'
+url = 'https://oryza-api.camp.re.kr/Oryza/connect'
 apikey = "61cdc660a46f4fcc93004de201c58dff"
-param = { "apiKey" : apikey}
+param = {"apiKey": apikey}
 res = requests.post(url=url, json=param)
 jobid = res.content.decode('utf-8')
 print(jobid)
 
+
 # launch model by session key
 inputfile = fileToBase64("./Sample.zip")
-params = { "apiKey" : apikey , "jobid": jobid, "file" : inputfile}
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/launch'
+params = {"apiKey": apikey, "jobid": jobid, "file": inputfile}
+url = 'https://oryza-api.camp.re.kr/Oryza/launch'
 res = requests.post(url=url, json=params)
 r = res.content.decode('utf-8')
 print(r)
 
+
 # get Status model
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/getStatus'
+url = 'https://oryza-api.camp.re.kr/Oryza/getStatus'
 params = { "apiKey" : apikey, "jobid": jobid}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
@@ -51,8 +53,8 @@ if res.status_code == 200:
             time.sleep(3)
 
 # get output
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/getOutput'
-params = { "apiKey" : apikey, "jobid": jobid, "variable" : "ADOY"}
+url = 'https://oryza-api.camp.re.kr/Oryza/getOutput'
+params = { "apiKey" : apikey, "jobid": jobid, "variable" : "all"}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
     file_path = 'output.zip'
@@ -60,7 +62,7 @@ if res.status_code == 200:
         file.write(res.content)
 
 # remove session
-url = 'https://ceres-rice-api.camp.re.kr/CeresRice/disconnect'
+url = 'https://oryza-api.camp.re.kr/Oryza/disconnect'
 params = { "apiKey" : apikey, "jobid": jobid }
 res = requests.post(str(url), json=params)
 r = res.content.decode('utf-8')
