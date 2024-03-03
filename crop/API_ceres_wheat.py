@@ -8,12 +8,11 @@ def fileToBase64(filepath):
     fp.close()
     return base64.b64encode(data).decode("utf-8")
 
-urlm = 'https://wofost-api.camp.re.kr/Wofost'
-
+urlm = 'https://ceres-wheat-api.camp.re.kr/CeresWheat'
 # get Sample
 url = f"{urlm}/getSample"
 apikey = '61cdc660a46f4fcc93004de201c58dff'
-param = {"apiKey": apikey}
+param = { "apiKey" : apikey}
 res = requests.post(url=url, json=param)
 
 if res.status_code == 200:
@@ -22,25 +21,23 @@ if res.status_code == 200:
         file.write(res.content)
 
 # create session
-url = f"{urlm}/connect"
+url = f"{urlm}//connect"
 apikey = "61cdc660a46f4fcc93004de201c58dff"
-param = {"apiKey": apikey}
+param = { "apiKey" : apikey}
 res = requests.post(url=url, json=param)
 jobid = res.content.decode('utf-8')
 print(jobid)
 
-
 # launch model by session key
 inputfile = fileToBase64("./Sample.zip")
-params = {"apiKey": apikey, "jobid": jobid, "file": inputfile}
+params = { "apiKey" : apikey , "jobid": jobid, "file" : inputfile}
 url = f"{urlm}/launch"
 res = requests.post(url=url, json=params)
 r = res.content.decode('utf-8')
 print(r)
 
-
 # get Status model
-url = f"{urlm}/getStatus"
+url = 'https://ceres-wheat-api.camp.re.kr/CeresWheat/getStatus'
 params = { "apiKey" : apikey, "jobid": jobid}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
@@ -56,7 +53,7 @@ if res.status_code == 200:
 
 # get output
 url = f"{urlm}/getOutput"
-params = { "apiKey" : apikey, "jobid": jobid, "variable" : "all"}
+params = { "apiKey" : apikey, "jobid": jobid, "variable" : "ADOY"}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
     file_path = 'output.zip'
