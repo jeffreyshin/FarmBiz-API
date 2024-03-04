@@ -94,20 +94,32 @@ df_usem = pd.DataFrame(usem)
 df_usem = df_usem.sort_values("datetime", ascending=True)
 print(df_usem)
 
-df_usem.to_csv("./usem.csv", index=False)
+df_usem.to_csv("./weather.csv", index=False)
 
 # server URL
 api_url_anthracnose = 'https://anthracnose-api.camp.re.kr/Anthracnose'
 api_url_botrytis = 'https://botrytis-api.camp.re.kr/Botrytis'
 
 headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'multipart/form-data; charset=utf-8'}
-file = {'file': open('usem.csv', 'rb')}
+file = {'file': open('weahter.csv', 'rb')}
 
 # 파일 합치기
-with zipfile.ZipFile('sample.zip', 'w') as myzip:
-    myzip.write('usem.csv')
+with zipfile.ZipFile('Sample.zip', 'w') as myzip:
+    myzip.write('weather.csv')
 
 urlm = api_url_anthracnose
+
+
+# get Sample
+url = f"{urlm}/getSample"
+apikey = '61cdc660a46f4fcc93004de201c58dff'
+param = {"apiKey": apikey}
+res = requests.post(url=url, json=param)
+
+if res.status_code == 200:
+    file_path = 'Sample2.zip'
+    with open(file_path, 'wb') as file:
+        file.write(res.content)
 
 # create session
 url = f"{urlm}/connect"
@@ -124,7 +136,6 @@ url = 'https://anthracnose-api.camp.re.kr/Anthracnose/launch'
 res = requests.post(url=url, json=params)
 r = res.content.decode('utf-8')
 print(r)
-
 
 # get Status model
 url = 'https://anthracnose-api.camp.re.kr/Anthracnose/getStatus'

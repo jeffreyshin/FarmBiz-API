@@ -7,8 +7,10 @@
     <list default="true" id="e1f99cf5-cbc4-46d0-9934-d7e325d56859" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pest/API_iot_USEM.py" beforeDir="false" afterPath="$PROJECT_DIR$/pest/API_iot_USEM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/Sample.zip" beforeDir="false" afterPath="$PROJECT_DIR$/pest/Sample.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/usem.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pest/usem.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pest/Sample.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pest/output.zip" beforeDir="false" afterPath="$PROJECT_DIR$/pest/output.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pest/usem.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pest/weather.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pest/weather.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
