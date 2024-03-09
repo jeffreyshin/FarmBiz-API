@@ -27,7 +27,6 @@ res = requests.post(url=url, json=param)
 jobid = res.content.decode('utf-8')
 print(jobid)
 
-
 # launch model by session key
 inputfile = fileToBase64("./Sample.zip")
 params = {"apiKey": apikey, "jobid": jobid, "file": inputfile}
@@ -35,7 +34,6 @@ url = 'https://anthracnose-api.camp.re.kr/Anthracnose/launch'
 res = requests.post(url=url, json=params)
 r = res.content.decode('utf-8')
 print(r)
-
 
 # get Status model
 url = 'https://anthracnose-api.camp.re.kr/Anthracnose/getStatus'

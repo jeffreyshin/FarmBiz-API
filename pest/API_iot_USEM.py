@@ -101,14 +101,13 @@ api_url_anthracnose = 'https://anthracnose-api.camp.re.kr/Anthracnose'
 api_url_botrytis = 'https://botrytis-api.camp.re.kr/Botrytis'
 
 headers = {'Accept': 'application/json; charset=utf-8', 'Content-Type': 'multipart/form-data; charset=utf-8'}
-file = {'file': open('weahter.csv', 'rb')}
+file = {'file': open('weather.csv', 'rb')}
 
 # 파일 합치기
 with zipfile.ZipFile('Sample.zip', 'w') as myzip:
     myzip.write('weather.csv')
 
 urlm = api_url_anthracnose
-
 
 # get Sample
 url = f"{urlm}/getSample"
@@ -168,11 +167,17 @@ res = requests.post(str(url), json=params)
 r = res.content.decode('utf-8')
 print(r)
 
+# 해제하기
+with zipfile.ZipFile('output.zip') as myzip:
+    myzip.extractall()
 
 
-
-'''
-response = requests.post(api_url_anthracnose, files=file)
+# response = requests.post(api_url_anthracnose, files=file)
+###############################################################
+fp = open("./output.csv", "rb")
+response = fp.read()
+fp.close()
+###############################################################
 
 r = response.json()
 output = json.loads(r['output'])
@@ -199,4 +204,3 @@ plt.title("Scatter Plot of the data")
 plt.xlabel("X")
 plt.ylabel("PINF")
 plt.show()
-'''
