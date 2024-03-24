@@ -41,13 +41,14 @@ response = requests.get(api_url, headers=headers, params=paramDict)
 
 json_obj = xmltodict.parse(response.text)
 
-#print(json_obj)
+print(json_obj)
 
 # response body
-if json_obj['response']['header']['resultCode'] == '00':
-    print("지역: " + json_obj['response']['body']['items']['item'][0]['stnNm'])
-    print("날짜: " + json_obj['response']['body']['items']['item'][0]['tm'])
-    print("평균기온: " + json_obj['response']['body']['items']['item'][0]['avgTa'])
-    print("최저기온: " + json_obj['response']['body']['items']['item'][0]['minTa'])
-    print("최고기온: " + json_obj['response']['body']['items']['item'][0]['maxTa'])
-    print("평균상대습도: " + json_obj['response']['body']['items']['item'][0]['avgRhm'])
+for i in range(0, 4):
+    if json_obj['response']['header']['resultCode'] == '00':
+        print("지역: " + json_obj['response']['body']['items']['item'][i]['stnNm'])
+        print("날짜: " + json_obj['response']['body']['items']['item'][i]['tm'])
+        print("평균기온: " + json_obj['response']['body']['items']['item'][i]['avgTa'])
+        print("최저기온: " + json_obj['response']['body']['items']['item'][i]['minTa'])
+        print("최고기온: " + json_obj['response']['body']['items']['item'][i]['maxTa'])
+        print("평균상대습도: " + json_obj['response']['body']['items']['item'][i]['avgRhm'])
