@@ -9,7 +9,7 @@ def fileToBase64(filepath):
     return base64.b64encode(data).decode("utf-8")
 
 # get Sample
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/getSample'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/getSample'
 apikey = '61cdc660a46f4fcc93004de201c58dff'
 param = {"apiKey": apikey}
 res = requests.post(url=url, json=param)
@@ -20,7 +20,7 @@ if res.status_code == 200:
         file.write(res.content)
 
 # create session
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/connect'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/connect'
 apikey = "61cdc660a46f4fcc93004de201c58dff"
 param = {"apiKey": apikey}
 res = requests.post(url=url, json=param)
@@ -29,16 +29,16 @@ print(jobid)
 
 
 # launch model by session key
-inputfile = fileToBase64("./Sample.zip")
+inputfile = fileToBase64("./Sample5.zip")
 params = {"apiKey": apikey, "jobid": jobid, "file": inputfile}
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/launch'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/launch'
 res = requests.post(url=url, json=params)
 r = res.content.decode('utf-8')
 print(r)
 
 
 # get Status model
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/getStatus'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/getStatus'
 params = { "apiKey" : apikey, "jobid": jobid}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
@@ -53,11 +53,11 @@ if res.status_code == 200:
             time.sleep(3)
 
 # get output
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/getOutput'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/getOutput'
 params = { "apiKey" : apikey, "jobid": jobid, "variable" : "all"}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
-    file_path = 'output.zip'
+    file_path = 'output3.zip'
     with open(file_path, 'wb') as file:
         file.write(res.content)
 
