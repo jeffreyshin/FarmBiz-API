@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1f99cf5-cbc4-46d0-9934-d7e325d56859" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/crop/Sample/setfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/Sample/weather.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/Sample2.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/Sample3.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crop/output3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pest/API_ncpms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/API_ncpms.py" beforeDir="false" afterPath="$PROJECT_DIR$/crop/API_ncpms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/Sample.zip" beforeDir="false" afterPath="$PROJECT_DIR$/crop/Sample.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/Sample/SITE.DAT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/Sample/manage.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/Sample/weather.WTH" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crop/output.zip" beforeDir="false" afterPath="$PROJECT_DIR$/crop/output.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/Sample.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pest/Sample2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crop/API_ncpms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pest/output.zip" beforeDir="false" afterPath="$PROJECT_DIR$/pest/output.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="API_ncpms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="API_ncpms" type="PythonConfigurationType" factoryName="Python">
       <module name="FarmBiz-API" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,11 +102,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crop" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pest" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crop/API_ncpms.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pest/API_ncpms.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

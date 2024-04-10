@@ -29,7 +29,7 @@ print(jobid)
 
 
 # launch model by session key
-inputfile = fileToBase64("./Sample5.zip")
+inputfile = fileToBase64("./Sample.zip")
 params = {"apiKey": apikey, "jobid": jobid, "file": inputfile}
 url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/launch'
 res = requests.post(url=url, json=params)
@@ -57,12 +57,12 @@ url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/getOutput'
 params = { "apiKey" : apikey, "jobid": jobid, "variable" : "all"}
 res = requests.post(url=url, json=params)
 if res.status_code == 200:
-    file_path = 'output3.zip'
+    file_path = 'output.zip'
     with open(file_path, 'wb') as file:
         file.write(res.content)
 
 # remove session
-url = 'https://ncpms-pepper-api.camp.re.kr/NCPMS/Pepper/disconnect'
+url = 'https://ncpms-apple-api.camp.re.kr/NCPMS/Apple/disconnect'
 params = { "apiKey" : apikey, "jobid": jobid }
 res = requests.post(str(url), json=params)
 r = res.content.decode('utf-8')
